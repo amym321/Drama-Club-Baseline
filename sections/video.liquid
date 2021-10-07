@@ -1,0 +1,64 @@
+{%- assign section_color = section.settings.color_scheme -%}
+<section class="video bg-{{ section_color }}-background text-{{ section_color }}-text overflow-hidden border-t-grid border-grid-color">
+  {% if section.settings.title != '' %}
+    {%- render 'section-title',
+      title: section.settings.title,
+      section_color: section_color
+    -%}
+  {% endif %}
+
+  <div class="{% unless settings.fill_image_to_border_edge %}p-2 lg:p-4{% endunless %}">
+    <div class="video-wrapper">
+      {% if section.settings.video_url %}
+        {% if section.settings.video_url.type == 'youtube' %}
+          <iframe width="560" height="315" src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        {% endif %}
+        {% if section.settings.video_url.type == 'vimeo' %}
+          <iframe src="//player.vimeo.com/video/{{ section.settings.video_url.id }}?color=00ff00" width="500" height="232" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        {% endif %}
+      {% else %}
+        <iframe width="560" height="315" src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Video",
+    "settings": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Heading"
+      },
+      {
+        "id": "video_url",
+        "type": "video_url",
+        "label": "Video URL",
+        "accept": ["youtube", "vimeo"],
+        "info": "Accepts URLs from YouTube or Vimeo",
+        "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+      },
+      {
+        "type":      "header",
+        "content":   "Color"
+      },
+      {
+        "type": "select",
+        "id": "color_scheme",
+        "label": "Color scheme",
+        "options": [
+            { "value": "primary", "label": "Primary"},
+            { "value": "secondary", "label": "Secondary"},
+            { "value": "tertiary", "label": "Tertiary"}
+        ],
+        "default":   "primary"
+      }
+    ],
+    "presets": [{
+        "name": "Video",
+        "category": "Video"
+    }]
+  }
+{% endschema %}

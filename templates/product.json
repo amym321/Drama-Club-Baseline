@@ -1,0 +1,72 @@
+{
+    "sections": {
+        "main": {
+            "type": "main-product",
+            "blocks": {
+                "a86a8dd1-877f-4054-ae76-9db6d3ddf8e2": { "type": "vendor", "settings": {} },
+                "title": { "type": "title", "settings": {} },
+                "price": { "type": "price", "settings": {} },
+                "variant_picker": { "type": "variant_picker", "settings": { "option_style": "text_underline", "hide_option_labels": true } },
+                "quantity_selector": { "type": "quantity_selector", "settings": {} },
+                "buy_buttons": { "type": "buy_buttons", "settings": { "enable_payment_button": false, "show_pickup_availability": false } },
+                "description": { "type": "description", "settings": { "enable_collapsible_tabs": true, "truncate_description": false } },
+                "d6c89a8c-38c5-4c13-b47a-ac61cfd63ab6": {
+                    "type": "icon_list",
+                    "disabled": true,
+                    "settings": {
+                        "heading": "Icon list",
+                        "text_color": "secondary",
+                        "text_1": "List item",
+                        "icon_1": "box",
+                        "text_2": "List item",
+                        "icon_2": "ruler",
+                        "text_3": "List item",
+                        "icon_3": "globe",
+                        "text_4": "List item",
+                        "icon_4": "washing",
+                        "text_5": "List item",
+                        "icon_5": "truck"
+                    }
+                },
+                "ab9db8bd-f90b-4b32-927c-ed58a3c9b59b": { "type": "share_buttons", "disabled": true, "settings": {} }
+            },
+            "block_order": ["a86a8dd1-877f-4054-ae76-9db6d3ddf8e2", "title", "price", "variant_picker", "quantity_selector", "buy_buttons", "description", "d6c89a8c-38c5-4c13-b47a-ac61cfd63ab6", "ab9db8bd-f90b-4b32-927c-ed58a3c9b59b"],
+            "settings": {
+                "desktop_image_width": "one-half",
+                "desktop_image_position": "left",
+                "two_images_per_row": false,
+                "first_image_full_width": false,
+                "variant_image_behaviour": "swap",
+                "enable_image_zoom": true,
+                "enable_video_looping": false,
+                "color_scheme": "primary",
+                "override_header_footer_color_scheme": false
+            }
+        },
+        "marquee": {
+            "type": "marquee",
+            "disabled": true,
+            "settings": {
+                "text": "Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.",
+                "link": "",
+                "text_size": "text-2xl lg:text-7xl",
+                "font": "heading",
+                "speed": 150,
+                "direction": "",
+                "color_scheme": "secondary"
+            }
+        },
+        "product-recommendations": {
+            "type": "product-recommendations",
+            "settings": {
+                "show_product_recommendations": true,
+                "product_recommendations_heading": "A robot said you'd like these...",
+                "limit": "4",
+                "products_per_row_desktop": "4",
+                "products_per_row_mobile": "1",
+                "color_scheme": "primary"
+            }
+        }
+    },
+    "order": ["main", "marquee", "product-recommendations"]
+}
